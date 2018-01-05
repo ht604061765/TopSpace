@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.topspace.core.system.task.bo.TaskBo">
+
+	<insert id="insert" parameterType="com.topspace.core.system.task.bo.TaskBo">
+		INSERT INTO t_task_info (id,code,name,rule,imp,isOpen)
+		VALUES ( #{id}, #{code}, #{name}, #{rule}, #{imp}, #{isOpen})
+	</insert>
+
+	<select id="findByList" resultType="com.topspace.core.system.task.bo.TaskBo">
+		select * from t_task_info
+	</select>
+
+	<select id="findTaskList" resultType="com.topspace.core.system.task.bo.TaskBo">
+		select * from t_task_info
+	</select>
+
+</mapper>

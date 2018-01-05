@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.topspace.customer.login.entity.UserInfoBo">
+
+  <insert id="insert" parameterType="com.topspace.customer.login.entity.UserInfoBo">
+    INSERT INTO t_user_info
+    (id,userId,nickName,headPic,certName,certSex,certType,
+    certNo,certPhone,certEmail,qq,wx,description,note)
+    VALUES
+      (#{id}, #{userId}, #{nickName}, #{headPic}, #{certName}, #{certSex}, #{certType}, 
+      #{certNo}, #{certPhone}, #{certEmail}, #{qq}, #{wx}, #{description}, #{note})
+  </insert>
+  
+  </mapper>
