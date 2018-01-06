@@ -7,10 +7,13 @@
 package com.topspace.customer.login.service;
 
 
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.topspace.core.framework.service.BaseService;
+import com.topspace.core.framework.utils.QueryParam;
 import com.topspace.customer.login.entity.UserBo;
 import com.topspace.customer.login.entity.UserInfoBo;
 
@@ -18,14 +21,19 @@ import com.topspace.customer.login.entity.UserInfoBo;
 @Service("")
 @Transactional
 public class LoginService extends BaseService{
-
+	
+	//查看是否存在这个用户
+	public UserBo findUser(String userAccount) {
+		QueryParam param = QueryParam.build().add("userAccount", userAccount);
+		UserBo ub =  (UserBo) findOneBySqlKey(UserBo.class,"findAccount",param);
+		return ub;
+	}
+	
 	public void insertUser(UserBo ub) {
-		//TODO
 		insert(ub);
 	}
 	
 	public void insertUserInfo(UserInfoBo uib) {
-		//TODO
 		insert(uib);
 	}
 }

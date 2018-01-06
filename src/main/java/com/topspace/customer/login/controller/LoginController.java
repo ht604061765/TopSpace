@@ -33,6 +33,14 @@ public class LoginController extends BaseController{
 	@Resource
 	LoginService LoginService;
 	
+	//查看是否存在此用户
+	public Boolean isHasAccount(String userAccount) {
+		Boolean had = false;
+		
+		
+		return had;
+	}
+	
 	@RequestMapping(params = "p=register")
 	public void register(HttpServletRequest request) throws Exception {
 		String userId = PKCreator.getPrimaryKey();

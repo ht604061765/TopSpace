@@ -5,11 +5,19 @@
 
 <mapper namespace="com.topspace.customer.login.entity.UserBo">
 
-  <insert id="insert" parameterType="com.topspace.customer.login.entity.UserBo">
-    INSERT INTO t_user
-    (id,userAccount,userCode,userPassword,regTime,isCert,description,note)
-     VALUES
-      (#{id}, #{userAccount}, #{userCode}, #{userPassword}, #{regTime},#{isCert},#{description},#{note})
-  </insert>
-  
-  </mapper>
+	<insert id="insert" parameterType="com.topspace.customer.login.entity.UserBo">
+		INSERT INTO t_user
+		(id,userAccount,userCode,userPassword,regTime,isCert,description,note)
+		VALUES
+		(#{id}, #{userAccount}, #{userCode}, #{userPassword},
+		#{regTime},#{isCert},#{description},#{note})
+	</insert>
+
+	<select id="findAccount" parameterType="com.topspace.customer.login.entity.UserBo">
+		SELECT * from t_user where 1=1
+		<if test="userAccount != null and userAccount != '' ">
+			and userAccount = #{userAccount}
+		</if>
+	</select>
+
+</mapper>
