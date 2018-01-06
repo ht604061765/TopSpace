@@ -34,13 +34,17 @@ public class LoginController extends BaseController{
 	LoginService LoginService;
 	
 	//查看是否存在此用户
+	@RequestMapping(params = "p=isHasAccount")
 	public Boolean isHasAccount(String userAccount) {
 		Boolean had = false;
-		
-		
+		Integer ub =  LoginService.findUser(userAccount);
+		if(ub == 0){
+			had = true;
+		}
 		return had;
 	}
 	
+	// 注册用户
 	@RequestMapping(params = "p=register")
 	public void register(HttpServletRequest request) throws Exception {
 		String userId = PKCreator.getPrimaryKey();

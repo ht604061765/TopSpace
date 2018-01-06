@@ -23,9 +23,9 @@ import com.topspace.customer.login.entity.UserInfoBo;
 public class LoginService extends BaseService{
 	
 	//查看是否存在这个用户
-	public UserBo findUser(String userAccount) {
+	public Integer findUser(String userAccount) {
 		QueryParam param = QueryParam.build().add("userAccount", userAccount);
-		UserBo ub =  (UserBo) findOneBySqlKey(UserBo.class,"findAccount",param);
+		Integer ub =  (Integer) findOneBySqlKey(UserBo.class,"isHaveAccount",param);
 		return ub;
 	}
 	

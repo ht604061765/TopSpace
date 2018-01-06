@@ -13,11 +13,8 @@
 		#{regTime},#{isCert},#{description},#{note})
 	</insert>
 
-	<select id="findAccount" parameterType="com.topspace.customer.login.entity.UserBo">
-		SELECT * from t_user where 1=1
-		<if test="userAccount != null and userAccount != '' ">
-			and userAccount = #{userAccount}
-		</if>
-	</select>
+   <select id="isHaveAccount" resultType="java.lang.Integer" parameterType="java.util.Map">
+    	select count(id) as count from t_user WHERE userAccount = #{userAccount}
+   </select>
 
 </mapper>

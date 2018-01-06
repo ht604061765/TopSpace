@@ -51,7 +51,7 @@
 				<label for="userAccount" class="col-sm-2 control-label">注册账号：</label>
 				<div class="col-sm-8">
 					<input type="text" class="form-control" id="userAccount" name="userAccount"
-						placeholder="请输入账号">
+						placeholder="请输入账号" onblur="isHasAccount()">
 				</div>
 				<div class="col-sm-2">
 				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="账号必填"></span>
@@ -101,6 +101,7 @@
 </body>
 </html>
 <script>
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
 
 $('#regBox').hover(function(){
 	$('#caution_userAccount').hide(1000);
@@ -110,6 +111,15 @@ $('#regBox').hover(function(){
 		 // 鼠标移出区域
 	 })
 
+function isHasAccount(){
+	var account = document.getElementById('userAccount').value
+	ajaxPostForm("/login.do?p=isHasAccount",{userAccount:account},function(data){
+		if (data.success) {
+			alert("success");
+		}
+	}); 
+}
+	 
 function VerificationPwdLong(){
 	var str = document.getElementById('inputPassword').value
 	if(str.length < 6){
@@ -156,8 +166,6 @@ function showRegBox(){
 	  $("#regBox").show(500);
 	  $("#loginBox").hide(1000);
 }
-
-$(function () { $("[data-toggle='tooltip']").tooltip(); });
 
 </script>
 <style>
