@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Bootstrap Test</title>
+<title>错误界面</title>
 <link rel="stylesheet"
 	href="/static_resources/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <script src="/static_resources/jquery-3.2.1.min.js"></script>

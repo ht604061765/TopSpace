@@ -39,7 +39,7 @@ public class LoginController extends BaseController{
 	
     @RequestMapping(params = "p=login")
 	public ModelAndView login(HttpServletRequest request) throws Exception {
-    	ModelAndView mv = new ModelAndView("entry/index");
+    	ModelAndView mv = new ModelAndView("index/index");
 		return mv;
 
 	}
