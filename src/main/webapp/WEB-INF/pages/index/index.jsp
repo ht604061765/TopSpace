@@ -24,7 +24,7 @@
 				<img src="/static_resources/images/mainPage_4.png" alt="First slide">
 			</div>
 			<div class="item">
-				<img src="/static_resources/images/whiteBack1.png"
+				<img src="/static_resources/images/timg.jpg"
 					alt="Second slide">
 				<div class="indexText">
 					<h1>titleTwo</h1>
