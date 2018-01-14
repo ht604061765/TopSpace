@@ -29,6 +29,12 @@ public class LoginService extends BaseService{
 		return ub;
 	}
 	
+	public UserBo selectUser(String userAccount) {
+		QueryParam param = QueryParam.build().add("userAccount", userAccount);
+		UserBo ub = (UserBo) findOneBySqlKey(UserBo.class,"selectUser",param);
+		return ub;
+	}
+	
 	public void insertUser(UserBo ub) {
 		insert(ub);
 	}

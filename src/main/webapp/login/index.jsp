@@ -136,18 +136,28 @@ $('#loginBox').hover(function(){
 		 // 鼠标移出区域
 	 })
 function login(){
-	var loginAcc = $.trim($("#loginAcc").val()).length
-	var loginPwd = $.trim($("#loginPwd").val()).length
-
-	if(loginAcc==0){
+	var account = $("#loginAcc").val(); 
+	var pwd = $("#loginPwd").val(); 
+	var md5Pwd = $.md5(pwd);
+	
+	if(account.length==0){
 		$('#caution_loginAcc').show(500);
 		return false;
 	}
-	if(loginPwd==0){
+	if(pwd.length==0){
 		$('#caution_loginPwd').show(500);
 		return false;
 	}
-	$("#loginForm").submit();
+	
+	ajaxPostForm("/login.do?p=checkUser",{userAccount:account,userPwd:md5Pwd},function(data){
+		if (data.msg == "OK") {
+			alert("OK");
+		}else{
+			alert("false");
+		}
+	}); 
+	
+//	$("#loginForm").submit();
 }	 
 	 
 function isHasAccount(){
