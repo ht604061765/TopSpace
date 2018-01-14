@@ -12,13 +12,17 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.JRadioButton;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.topspace.core.framework.controller.BaseController;
 import com.topspace.core.framework.misc.SystemConstant;
+import com.topspace.core.utils.Json4Return;
 import com.topspace.core.utils.PKCreator;
 import com.topspace.core.utils.URLUtil;
 import com.topspace.customer.login.entity.UserBo;
@@ -33,25 +37,33 @@ public class LoginController extends BaseController{
 	@Resource
 	LoginService LoginService;
 	
+    @RequestMapping(params = "p=login")
+	public ModelAndView login(HttpServletRequest request) throws Exception {
+    	ModelAndView mv = new ModelAndView("index/index");
+		return mv;
+
+	}
+	
 	//查看是否存在此用户
 	@RequestMapping(params = "p=isHasAccount")
-	public Boolean isHasAccount(String userAccount) {
-		Boolean had = false;
+	@ResponseBody
+	public Json4Return isHasAccount(String userAccount) {
+		Json4Return jr;
+		boolean hadAccount = false;
 		Integer ub =  LoginService.findUser(userAccount);
 		if(ub == 0){
-			had = true;
+			hadAccount = true;
 		}
-		return had;
+		jr = new Json4Return(true,hadAccount);
+		return jr;
 	}
 	
 	// 注册用户
 	@RequestMapping(params = "p=register")
-	public void register(HttpServletRequest request) throws Exception {
+	public ModelAndView register(HttpServletRequest request) throws Exception {
 		String userId = PKCreator.getPrimaryKey();
 		UserBo user = new UserBo();
 		UserInfoBo userInfo = new UserInfoBo();
-		
-		Map map1 = request.getParameterMap();
 		
 		user.setId(userId);
 		user.setUserAccount(request.getParameter("userAccount").toString());
@@ -61,6 +73,8 @@ public class LoginController extends BaseController{
 		userInfo.setId(PKCreator.getPrimaryKey());
 		userInfo.setUserId(userId);
 		LoginService.insertUserInfo(userInfo);
+		ModelAndView mv = new ModelAndView("index");
+		return mv;
 
 	}
 }

@@ -10,7 +10,7 @@
 <script src="/static_resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>oh，程序出现了问题，请联系开发者那个臭表脸的。</h1>
+<h1>oh，这里是初始页面，有问题请联系开发者那个臭表脸的。</h1>
 	
 </body>
 </html>

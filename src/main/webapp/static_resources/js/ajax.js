@@ -4,7 +4,7 @@
   paramData:{userAccount:account}
   callBack:yourCallBack
 */
-//document.write("<script src='/static_resources/js/json2.js'></script>");
+document.write("<script src='/static_resources/js/json2.js'></script>");
 function ajaxPostJson(url,params,callBack){
 	   $.ajax({
 					type: "post", 

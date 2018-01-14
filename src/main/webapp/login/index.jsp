@@ -10,21 +10,24 @@
 <script src="/static_resources/jquery-3.2.1.min.js"></script>
 <script src="/static_resources/jquery.md5.js"></script>
 <script src="/static_resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/static_resources/js/ajax.js"></script>
+
+<link rel="stylesheet" href="/static_resources/customer/css/login.css">
 </head>
 <body>
 	<div id="loginBox" class="loginBox">
-		<form id="loginForm" class="form-horizontal" role="form" action="/index">
+		<form id="loginForm" class="form-horizontal" role="form" action="/login.do?p=login" method="post">
 			<div class="form-group">
-				<label for="firstname" class="col-sm-2 control-label">账号</label>
+				<label for="firstname" class="col-sm-2 control-label" >账号</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="firstname"
+					<input type="text" class="form-control" id="loginAcc"
 						placeholder="请输入账号">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">密码</label>
+				<label for="lastname" class="col-sm-2 control-label" >密码</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="lastname"
+					<input type="text" class="form-control" id="loginPwd"
 						placeholder="请输入密码">
 				</div>
 			</div>
@@ -38,7 +41,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default loginbtn">登录</button>
+					<button type="button" class="btn btn-default loginbtn" onclick="login()">登录</button>
 					<button type="button" class="btn btn-default regbtn" onclick="showRegBox()">注册一个</button>
 				</div>
 			</div>
@@ -54,7 +57,8 @@
 						placeholder="请输入账号" onblur="isHasAccount()">
 				</div>
 				<div class="col-sm-2">
-				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="账号必填"></span>
+				<span class="glyphicon glyphicon-exclamation-sign notice" id="account_notice" data-toggle="tooltip" data-placement="right" title="账号必填，而且要唯一"></span>
+				<span class="glyphicon glyphicon-ok can_register" id="can_register"></span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -65,7 +69,7 @@
 					<input type="hidden" class="form-control" id="userPassword" name="userPassword">
 				</div>
 				<div class="col-sm-2">
-				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="密码，必填，最短6位"></span>
+				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="密码必填，最短6位数"></span>
 				</div>
 			</div>
 						<div class="form-group">
@@ -76,7 +80,7 @@
 						
 				</div>
 				<div class="col-sm-2">
-				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="验证密码,必填"></span>
+				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="与密码一致的验证密码"></span>
 				</div>
 			</div>
 			<div class="form-group">
@@ -89,33 +93,73 @@
 		</form>
 		</div>
 		
-<div class="alert alert-warning caution_Box" id="caution_userAccount">
-	<strong>提示：请输入您要注册的账户！</strong>
+<div class="alert alert-info caution_Box" id="caution_userAccount">
+	<strong>信息：请输入您要注册的账户！</strong>
 </div>
-<div class="alert alert-warning caution_Box" id="caution_inputPassword">
-	<strong>提示：请输入注册密码,不能少于6位数！</strong>
+<div class="alert alert-info caution_Box" id="caution_inputPassword">
+	<strong>信息：请输入注册密码,不能少于6位数！</strong>
 </div>
 <div class="alert alert-warning caution_Box" id="caution_VerificationPwd">
-	<strong>提示：请输入和注册密码一致的验证密码！</strong>
+	<strong>警告：请输入和注册密码一致的验证密码！</strong>
 </div>
+<div class="alert alert-danger caution_Box" id="caution_HasAccount">
+	<strong>错误：您要注册的账号已存在！</strong>
+</div>
+<div class="alert alert-success caution_Box" id="success_RegisterSuccess">
+<strong>成功：注册成功!</strong>
+</div>
+<div class="alert alert-info caution_Box" id="caution_loginAcc">
+<strong>信息：请输入登录账号！</strong>
+</div>
+<div class="alert alert-info caution_Box" id="caution_loginPwd">
+<strong>信息：请输入登录密码！</strong>
+</div>
+
 </body>
 </html>
 <script>
 $(function () { $("[data-toggle='tooltip']").tooltip(); });
 
 $('#regBox').hover(function(){
-	$('#caution_userAccount').hide(1000);
-	$('#caution_inputPassword').hide(1000);
-	$('#caution_VerificationPwd').hide(1000);
+	$('#caution_userAccount').hide(500);
+	$('#caution_inputPassword').hide(500);
+	$('#caution_VerificationPwd').hide(500);
+	$('#caution_HasAccount').hide(500);
+	$('#success_RegisterSuccess').hide(500);
 	 },function(){
 		 // 鼠标移出区域
 	 })
+$('#loginBox').hover(function(){
+	$('#caution_loginAcc').hide(500);
+	$('#caution_loginPwd').hide(500);
+	 },function(){
+		 // 鼠标移出区域
+	 })
+function login(){
+	var loginAcc = $.trim($("#loginAcc").val()).length
+	var loginPwd = $.trim($("#loginPwd").val()).length
 
+	if(loginAcc==0){
+		$('#caution_loginAcc').show(500);
+		return false;
+	}
+	if(loginPwd==0){
+		$('#caution_loginPwd').show(500);
+		return false;
+	}
+	$("#loginForm").submit();
+}	 
+	 
 function isHasAccount(){
+	//判断账号是否已存在
 	var account = document.getElementById('userAccount').value
 	ajaxPostForm("/login.do?p=isHasAccount",{userAccount:account},function(data){
-		if (data.success) {
-			alert("success");
+		if (data.result) {
+			$('#account_notice').hide(500);
+			$('#can_register').show(500);
+		}else{
+			$('#account_notice').show(500);
+			$('#can_register').hide(500);
 		}
 	}); 
 }
@@ -156,7 +200,23 @@ function register(){
 		$('#caution_VerificationPwd').show(500);
 		return false;
 	}
-	//$("#regForm").submit();
+	//判断验证密码填写是否正确
+	if(document.getElementById("inputPassword").value != document.getElementById("VerificationPwd").value){
+		//两次密码输入不一致
+		$('#caution_VerificationPwd').show(500);
+		return false;
+	}
+	//判断账号是否已存在
+	var account = document.getElementById('userAccount').value
+	ajaxPostForm("/login.do?p=isHasAccount",{userAccount:account},function(data){
+		if (data.result) {
+			$('#success_RegisterSuccess').show(500);
+			$("#regForm").submit();
+		}else{
+			$('#caution_HasAccount').show(500);
+			return false;
+		}
+	}); 
 	}
 
 function backLogin(){
@@ -168,88 +228,6 @@ function showRegBox(){
 }
 
 </script>
-<style>
-.caution_Box{
-text-align:center;
-  	position: absolute;
-	margin:0 auto;
-	width: 300px;
-	height: auto;
-	right: 20px;
-  	top: 20px;
-	display:none;
-}
 
-.notice{
-	float:left;
-	margin-top:7%;
-	color:red;
-}
-
-.regbtn{
-	float:right;
-	margin-right:10%;
-}
-.loginbtn{
-	float:right;
-	margin-right:10%;
-}
-
-.form-control{
-	width: 100%;
-}
-.form-horizontal{
-	padding-top:5%;
-}
-
-.regBox {
-  	position: absolute;
-  	left: 20%;
-  	top: 20px;
-	display:none;
-	margin:0 auto;
-	height: auto;
-	width: 60%;
-	background:rgba(251, 248, 248, 0.45);
-	color:#3a2e2e;
-	border-radius:5px;
-}
-
-.regBox:hover {
-  	position: absolute;
-  	left: 20%;
-  	top: 20px;
-	display:none;
-	margin:0 auto;
-	height: auto;
-	width: 60%;
-	background:rgba(251, 248, 248, 0.65);
-	color:#3a2e2e;
-	border-radius:5px;
-}
-.loginBox {
-	margin-top:5%;
-	margin-left:10%;
-	height: 40%;
-	width: 30%;
-	background:rgba(115, 106, 106, 0.38);
-	color:#FFF;
-	border-radius:20px;
-}
-.loginBox:hover {
-	margin-top:5%;
-	margin-left:10%;
-	height: 40%;
-	width: 30%;
-	background:rgba(115, 106, 106, 0.5);
-	color:#FFF;
-	border-radius:20px;
-}
-
-body {
-	background: url(/static_resources/images/Login_backGround.png) fixed center center no-repeat;
-	background-size: cover;
-}
-</style>
 
 
