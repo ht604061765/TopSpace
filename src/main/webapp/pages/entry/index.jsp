@@ -10,7 +10,7 @@
 <script src="/static_resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<%@ include file="/pages/index/headIndex.jsp"%>
+	<%@ include file="/pages/entry/headIndex.jsp"%>
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- 轮播（Carousel）指标 -->
 		<ol class="carousel-indicators">
