@@ -106,13 +106,19 @@
 	<strong>错误：您要注册的账号已存在！</strong>
 </div>
 <div class="alert alert-success caution_Box" id="success_RegisterSuccess">
-<strong>成功：注册成功!</strong>
+	<strong>成功：注册成功!</strong>
 </div>
 <div class="alert alert-info caution_Box" id="caution_loginAcc">
-<strong>信息：请输入登录账号！</strong>
+	<strong>信息：请输入登录账号！</strong>
 </div>
 <div class="alert alert-info caution_Box" id="caution_loginPwd">
-<strong>信息：请输入登录密码！</strong>
+	<strong>信息：请输入登录密码！</strong>
+</div>
+<div class="alert alert-danger caution_Box" id="danger_HasNoAccount">
+	<strong>错误：您要登录的账号不存在！</strong>
+</div>
+<div class="alert alert-danger caution_Box" id="danger_invalidPwd">
+	<strong>错误：输入的密码有误！</strong>
 </div>
 
 </body>
@@ -132,6 +138,9 @@ $('#regBox').hover(function(){
 $('#loginBox').hover(function(){
 	$('#caution_loginAcc').hide(500);
 	$('#caution_loginPwd').hide(500);
+	$('#danger_HasNoAccount').hide(500);
+	$('#danger_invalidPwd').hide(500);
+
 	 },function(){
 		 // 鼠标移出区域
 	 })
@@ -151,13 +160,16 @@ function login(){
 	
 	ajaxPostForm("/login.do?p=checkUser",{userAccount:account,userPwd:md5Pwd},function(data){
 		if (data.msg == "OK") {
-			alert("OK");
+			$("#loginForm").submit();
+		}else if(data.msg == "hasNoUser"){
+			$('#danger_HasNoAccount').show(500);
+		}else if(data.msg == "invalidPwd"){
+			$('#danger_invalidPwd').show(500);
 		}else{
-			alert("false");
+			
 		}
 	}); 
 	
-//	$("#loginForm").submit();
 }	 
 	 
 function isHasAccount(){

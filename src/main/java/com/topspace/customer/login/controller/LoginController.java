@@ -47,11 +47,12 @@ public class LoginController extends BaseController{
 	public Json4Return checkUser(String userAccount,String userPwd){
     	String checkUserReturn = "OK";
     	UserBo user = LoginService.selectUser(userAccount);
-    	if (user.getId() == null || user.getId() == "") {
+    	if (user == null) {
     		checkUserReturn = "hasNoUser";
-		}
-    	if (user.getUserPassword() != userPwd) {
-    		checkUserReturn = "invalidPwd";
+		}else{
+			if (!user.getUserPassword().equals(userPwd)) {
+	    		checkUserReturn = "invalidPwd";
+			}
 		}
 		Json4Return jr = new Json4Return(true,checkUserReturn);
 		return jr;
