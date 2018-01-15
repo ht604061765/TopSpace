@@ -41,7 +41,20 @@ public class LoginController extends BaseController{
 	public ModelAndView login(HttpServletRequest request) throws Exception {
     	ModelAndView mv = new ModelAndView("index/index");
 		return mv;
-
+	}
+    @RequestMapping(params = "p=checkUser")
+    @ResponseBody
+	public Json4Return checkUser(String userAccount,String userPwd){
+    	String checkUserReturn = "OK";
+    	UserBo user = LoginService.selectUser(userAccount);
+    	if (user.getId() == null || user.getId() == "") {
+    		checkUserReturn = "hasNoUser";
+		}
+    	if (user.getUserPassword() != userPwd) {
+    		checkUserReturn = "invalidPwd";
+		}
+		Json4Return jr = new Json4Return(true,checkUserReturn);
+		return jr;
 	}
 	
 	//查看是否存在此用户
@@ -50,8 +63,8 @@ public class LoginController extends BaseController{
 	public Json4Return isHasAccount(String userAccount) {
 		Json4Return jr;
 		boolean hadAccount = false;
-		Integer ub =  LoginService.findUser(userAccount);
-		if(ub == 0){
+		Integer hasUser =  LoginService.findUser(userAccount);
+		if(hasUser == 0){
 			hadAccount = true;
 		}
 		jr = new Json4Return(true,hadAccount);
