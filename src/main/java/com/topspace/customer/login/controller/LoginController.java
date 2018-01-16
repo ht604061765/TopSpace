@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.topspace.core.framework.controller.BaseController;
 import com.topspace.core.framework.misc.SystemConstant;
+import com.topspace.core.framework.session.SessionUtil;
 import com.topspace.core.utils.Json4Return;
 import com.topspace.core.utils.PKCreator;
 import com.topspace.core.utils.URLUtil;
@@ -40,6 +41,7 @@ public class LoginController extends BaseController{
 	
     @RequestMapping(params = "p=login")
 	public ModelAndView login(HttpServletRequest request) throws Exception {
+    	SessionUtil.setAttribute(request, "CURRENT_USER_SESSION", "testtest");
     	ModelAndView mv = new ModelAndView("index/index");
 		return mv;
 	}
