@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.JRadioButton;
 
