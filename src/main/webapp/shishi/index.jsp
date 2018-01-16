@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=GBK"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-Type" content="text/html; charset="utf-8">
+<meta http-equiv="content-Type" content="text/html; charset="UTF-8">
 <title>资料填写</title>
 </head>
 <body>
@@ -12,7 +14,7 @@
 <div class="row">
 <div class="head_picture_div col-md-4 col-xs-6">
 	<img class="head_pciture"
-		src=/static_resources/images/logo1220(1590X700).jpg">
+		src="/static_resources/images/logo1220(1590X700).jpg">
 	</div>
 </div>
 </div></div>
@@ -42,7 +44,7 @@
 
 
 <div style = "float:left; border-width:2px; border-style:solid;">
-<form name = "form1" action="testController.java" method="get">
+<form name = "form1" action="_" method="get">
 <ul class = "wudian">
 <li class = "tou">个人资料</li>
 </ul>
@@ -62,7 +64,7 @@
 </form>
 </div>  
 <div style = "float:left">  
-<img src="/static_resources/images/2.gif" alt="嘻嘻">
+<img src="/static_resources/images/xixi.gif" alt="嘻嘻">
 </div> 
 </body>
 </html>
