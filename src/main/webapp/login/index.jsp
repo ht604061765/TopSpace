@@ -11,6 +11,7 @@
 <script src="/static_resources/jquery.md5.js"></script>
 <script src="/static_resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="/static_resources/js/ajax.js"></script>
+<script src="/static_resources/js/cokie.js"></script>
 
 <link rel="stylesheet" href="/static_resources/customer/css/login.css">
 </head>
@@ -20,14 +21,14 @@
 			<div class="form-group">
 				<label for="firstname" class="col-sm-2 control-label" >账号</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="loginAcc"
+					<input type="text" class="form-control" id="loginAcc" name="userAccount"
 						placeholder="请输入账号">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="lastname" class="col-sm-2 control-label" >密码</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control" id="loginPwd"
+					<input type="text" class="form-control" id="loginPwd" name="userPassword"
 						placeholder="请输入密码">
 				</div>
 			</div>
@@ -160,7 +161,9 @@ function login(){
 	
 	ajaxPostForm("/login.do?p=checkUser",{userAccount:account,userPwd:md5Pwd},function(data){
 		if (data.msg == "OK") {
-			$("#loginForm").submit();
+	    	saveCookie(account,md5Pwd,false);
+			alert("save cokies！");
+//			$("#loginForm").submit();
 		}else if(data.msg == "hasNoUser"){
 			$('#danger_HasNoAccount').show(500);
 		}else if(data.msg == "invalidPwd"){
@@ -247,6 +250,17 @@ function backLogin(){
 function showRegBox(){
 	  $("#regBox").show(500);
 	  $("#loginBox").hide(1000);
+}
+
+function saveCookie(sysAccount,pwd,isSaveCookie){
+	 addCookie("sysAccount",sysAccount,1,"/");
+	 if(isSaveCookie){
+		 addCookie("pwd",pwd,14,"/");
+		 addCookie("isSaveCookie",true,14,"/");
+	 }else {
+		 deleteCookie("pwd","/");
+		 deleteCookie("isSaveCookie","/");
+	 }
 }
 
 </script>

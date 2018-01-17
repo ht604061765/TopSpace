@@ -18,6 +18,7 @@ import javax.swing.JRadioButton;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,12 +40,18 @@ public class LoginController extends BaseController{
 	@Resource
 	LoginService LoginService;
 	
-    @RequestMapping(params = "p=login")
-	public ModelAndView login(HttpServletRequest request) throws Exception {
+    @RequestMapping(params = "p=login", method = RequestMethod.POST)
+	public ModelAndView login(UserBo ub,HttpServletRequest request) throws Exception {
+    	String userAccount = ub.getUserAccount();
+    	String userPassword = ub.getUserPassword();
+
     	SessionUtil.setAttribute(request, "CURRENT_USER_SESSION", "testtest");
+    	
     	ModelAndView mv = new ModelAndView("index/index");
 		return mv;
 	}
+    
+    
     @RequestMapping(params = "p=checkUser")
     @ResponseBody
 	public Json4Return checkUser(String userAccount,String userPwd){
