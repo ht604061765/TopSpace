@@ -45,7 +45,9 @@ public class SessionUtil {
 		 if(value instanceof UserBo) {
 			 account = ((UserBo)value).getUserAccount();
 		 } 
-		 LOG.info(" 账号 ["+account+"] 通过IP["+SystemThreadLocal.getInstanse().getReqIP()+"] 访问");
+		 String loginIpString = getIpAddr(request);
+//		 LOG.info(" 账号 ["+account+"] 通过IP["+SystemThreadLocal.getInstanse().getReqIP()+"] 访问");
+		 LOG.info(" 账号 ["+account+"] 通过IP["+loginIpString+"] 访问");
 	}
 	
 
@@ -77,6 +79,29 @@ public class SessionUtil {
 			}
 		}
 		return s;
+	}
+	
+	/**
+	 * 获取登录用户IP地址
+	 * 
+	 * @param request
+	 * @return
+	 */
+	public static String getIpAddr(HttpServletRequest request) {
+		String ip = request.getHeader("x-forwarded-for");
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getHeader("WL-Proxy-Client-IP");
+		}
+		if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+			ip = request.getRemoteAddr();
+		}
+		if (ip.equals("0:0:0:0:0:0:0:1")) {
+			ip = "本地";
+		}
+		return ip;
 	}
 
 }
