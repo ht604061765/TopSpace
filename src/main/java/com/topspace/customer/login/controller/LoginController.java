@@ -45,7 +45,7 @@ public class LoginController extends BaseController{
     	String userAccount = ub.getUserAccount();
     	String userPassword = ub.getUserPassword();
 
-    	SessionUtil.setAttribute(request, "CURRENT_USER_SESSION", "testtest");
+    	SessionUtil.setAttribute(request, "Current_Login_UserAccount", ub);
     	
     	ModelAndView mv = new ModelAndView("index/index");
 		return mv;

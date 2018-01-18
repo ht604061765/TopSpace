@@ -11,7 +11,7 @@
 <script src="/static_resources/jquery.md5.js"></script>
 <script src="/static_resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="/static_resources/js/ajax.js"></script>
-<script src="/static_resources/js/cokie.js"></script>
+<script src="/static_resources/js/cookie.js"></script>
 
 <link rel="stylesheet" href="/static_resources/customer/css/login.css">
 </head>
@@ -162,8 +162,8 @@ function login(){
 	ajaxPostForm("/login.do?p=checkUser",{userAccount:account,userPwd:md5Pwd},function(data){
 		if (data.msg == "OK") {
 	    	saveCookie(account,md5Pwd,false);
-			alert("save cokies！");
-//			$("#loginForm").submit();
+			$("#loginForm").submit();
+			
 		}else if(data.msg == "hasNoUser"){
 			$('#danger_HasNoAccount').show(500);
 		}else if(data.msg == "invalidPwd"){
