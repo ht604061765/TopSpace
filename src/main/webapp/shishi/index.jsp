@@ -41,40 +41,25 @@
 	height: 6px;
 }
 </style>
-
-
-<div style = "float:left; border-width:2px; border-style:solid;">
-<form name = "form1" action="_" method="get">
-<ul class = "wudian">
-<li class = "tou">个人资料</li>
-</ul>
-<ul class = "wudian">
-<li >姓名<input type = "text" name = "pname"></li>
-</ul>
-<ul class = "wudian">
-<input type="radio" name="sex" value="male"/>男
-<input type="radio" name="sex" value="female"/>女
-</ul>
-<ul class = "wudian">
-<li >爱好<input type = "text" name = "hobit"></li>
-</ul>
-<ul class = "wudian">
-<li ><input type = "submit" value = "提交"></li>
-</ul>
+<h1>资料<h1>
+<form class="form-horizontal" role="form" action="test.do?t=test" method="post">
+  <div class="form-group">
+    <label for="firstname" class="col-sm-2 control-label">名字</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="usersex" class="col-sm-2 control-label">性别</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="lastname" placeholder="请输入性别">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">保存</button>
+    </div>
+  </div>
 </form>
-</div>  
-<div style = "float:left">  
-<img src="/static_resources/images/xixi.gif" alt="嘻嘻">
-</div> 
 </body>
 </html>
-<style>
-.wudian
-{list-style-type:none;
-}
-.tou
-{
-font-size:50px;
-color:#46A3FF;
-}
-</style>
