@@ -34,7 +34,7 @@ import com.topspace.customer.login.service.LoginService;
 
 @SuppressWarnings("restriction")
 @Controller("LoginController")
-@RequestMapping("/login.do")
+@RequestMapping("/shishi.do")
 public class shishiController extends BaseController{
 
 	@Resource
@@ -53,19 +53,21 @@ public class shishiController extends BaseController{
     
     @RequestMapping(params = "t=test")
     @ResponseBody
-	public Json4Return checkUser(String userAccount,String userPwd){
-    	String checkUserReturn = "OK";
-    	UserBo user = LoginService.selectUser(userAccount);
-    	if (user == null) {
-    		checkUserReturn = "hasNoUser";
-		}else{
-			if (!user.getUserPassword().equals(userPwd)) {
-	    		checkUserReturn = "invalidPwd";
-			}
-		}
-		Json4Return jr = new Json4Return(true,checkUserReturn);
-		return jr;
-	}
+	public String checkUser(String gname,String gsex){
+    	system.out.println("++++++++++++++++++++++");
+//    	String checkUserReturn = "OK";
+//    	UserBo user = LoginService.selectUser(userAccount);
+//    	if (user == null) {
+//    		checkUserReturn = "hasNoUser";
+//		}else{
+//			if (!user.getUserPassword().equals(userPwd)) {
+//	    		checkUserReturn = "invalidPwd";
+//			}
+//		}
+//		Json4Return jr = new Json4Return(true,checkUserReturn);
+//		return jr;
+       return null;
+    }
    
     
     public static void main(String[] args) {
