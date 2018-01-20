@@ -42,7 +42,7 @@
 }
 </style>
 <h1>资料<h1>
-<form class="form-horizontal" role="form" action="shishi.do?t=test" method="post">
+<form class="form-horizontal" role="form" action="/shishi.do?p=test" method="post">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">名字</label>
     <div class="col-sm-10">

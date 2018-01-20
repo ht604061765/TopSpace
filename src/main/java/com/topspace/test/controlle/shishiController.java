@@ -33,28 +33,18 @@ import com.topspace.customer.login.entity.UserInfoBo;
 import com.topspace.customer.login.service.LoginService;
 
 @SuppressWarnings("restriction")
-@Controller("LoginController")
+@Controller("shishiController")
 @RequestMapping("/shishi.do")
 public class shishiController extends BaseController{
-
-	@Resource
-	LoginService LoginService;
 	
-    @RequestMapping(params = "p=login", method = RequestMethod.POST)
-	public ModelAndView login(UserBo ub,HttpServletRequest request) throws Exception {
-    	String userAccount = ub.getUserAccount();
-    	String userPassword = ub.getUserPassword();
-
-    	SessionUtil.setAttribute(request, "CURRENT_USER_SESSION", "testtest");
-    	
-    	ModelAndView mv = new ModelAndView("index/index");
-		return mv;
-	}
-    
-    @RequestMapping(params = "t=test")
+    @RequestMapping(params = "p=test")
     @ResponseBody
 	public String checkUser(String gname,String gsex){
-    	system.out.println("++++++++++++++++++++++");
+    	System.out.println("++++++++++++++++++++++");
+
+    	System.out.println("gname="+gname+";gsex="+gsex);
+    	
+    	System.out.println("++++++++++++++++++++++");
 //    	String checkUserReturn = "OK";
 //    	UserBo user = LoginService.selectUser(userAccount);
 //    	if (user == null) {
@@ -69,44 +59,6 @@ public class shishiController extends BaseController{
        return null;
     }
    
-    
-    public static void main(String[] args) {
-    	shishiController aa = new shishiController();
-    	aa.checkUser();
-    }
-	//查看是否存在此用户
-	@RequestMapping(params = "p=isHasAccount")
-	@ResponseBody
-	public Json4Return isHasAccount(String userAccount) {
-		Json4Return jr;
-		boolean hadAccount = false;
-		Integer hasUser =  LoginService.findUser(userAccount);
-		if(hasUser == 0){
-			hadAccount = true;
-		}
-		jr = new Json4Return(true,hadAccount);
-		return jr;
-	}
-	
-	// 注册用户
-	@RequestMapping(params = "p=register")
-	public ModelAndView register(HttpServletRequest request) throws Exception {
-		String userId = PKCreator.getPrimaryKey();
-		UserBo user = new UserBo();
-		UserInfoBo userInfo = new UserInfoBo();
-		
-		user.setId(userId);
-		user.setUserAccount(request.getParameter("userAccount").toString());
-		user.setUserPassword(request.getParameter("userPassword").toString());
-		LoginService.insertUser(user);
-		
-		userInfo.setId(PKCreator.getPrimaryKey());
-		userInfo.setUserId(userId);
-		LoginService.insertUserInfo(userInfo);
-		ModelAndView mv = new ModelAndView("index");
-		return mv;
-
-	}
 }
 
 

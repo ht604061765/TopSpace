@@ -55,6 +55,8 @@ public class LoginController extends BaseController{
     @RequestMapping(params = "p=checkUser")
     @ResponseBody
 	public Json4Return checkUser(String userAccount,String userPwd){
+    	System.out.println(userAccount);
+    	
     	String checkUserReturn = "OK";
     	UserBo user = LoginService.selectUser(userAccount);
     	if (user == null) {
