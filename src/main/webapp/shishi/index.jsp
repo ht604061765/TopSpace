@@ -42,17 +42,17 @@
 }
 </style>
 <h1>资料<h1>
-<form class="form-horizontal" role="form" action="test.do?t=test" method="post">
+<form class="form-horizontal" role="form" action="shishi.do?t=test" method="post">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">名字</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+      <input type="text" class="form-control" id="firstname" name="gname" placeholder="请输入名字">
     </div>
   </div>
   <div class="form-group">
     <label for="usersex" class="col-sm-2 control-label">性别</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="lastname" placeholder="请输入性别">
+      <input type="text" class="form-control" id="lastname" name="gsex" placeholder="请输入性别">
     </div>
   </div>
   <div class="form-group">
