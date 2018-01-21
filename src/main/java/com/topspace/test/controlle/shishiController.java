@@ -42,61 +42,75 @@ public class shishiController extends BaseController{
 	@Resource
 	LoginService LoginService;
 	
-    @RequestMapping(params = "p=test")
-    @ResponseBody
-	public String checkUser(String gname,String gsex){
-    	System.out.println("++++++++++++++++++++++");
-
-    	System.out.println("gname="+gname+";gsex="+gsex);
-    	
-    	System.out.println("++++++++++++++++++++++");
-
-       return null;
-    }
-    
-    @RequestMapping(params = "p=testMvc")
-    @ResponseBody
-	public String testMvc(UserBo ub1){
-    	String aaaString = ub1.getUserAccount();
-    	ub1.setId("aaa");
-		LoginService.insertUser(ub1);
-       return null;
-    }
-   
-
- @RequestMapping(params = "p=shuuju")
- @ResponseBody
- public String shuuju(String userAccount,String userPassword){
-	 Date date = new Date();
-	 UserBo b = new  UserBo();
-	b.setUserAccount(userAccount);
-	b.setUserPassword(userPassword);
-	b.setId(StringUtil.toString(date));
-	 
-	 LoginService.insertUser(b);
-	 return null;
-   }
- 
- 
- @RequestMapping(params = "p=shuju")
- @ResponseBody
- public String shuju(UserInfoBo c){
- Date date = new Date();
- c.setId(StringUtil.toString(date));
- c.setCertEmail("1");
- c.setCertName("2");
- c.setCertNo("3");
- c.setCertPhone("4");
- c.setCertSex("5");
- c.setCertType("6");
- c.setDescription("7");
- c.setHeadPic("8");
- c.setNickName("9");
- c.setNote("10");
- c.setQq("11");
- c.setUserId("12");
- c.setWx("13");
- LoginService.insertUserInfo(c);
- return null;
-  }
+	@RequestMapping(params = "p=shishiz")
+	@ResponseBody
+	public String xinZeng(UserBo x){
+		Date date = new Date();
+		x.setId(StringUtil.toString(date));
+		x.setUserAccount("userAccount");
+		x.setUserPassword("userPassword");
+		LoginService.insertUser(x);
+		return null;
+	}
+	
+	
+//    @RequestMapping(params = "p=test")
+//    @ResponseBody
+//	public String checkUser(String gname,String gsex){
+//    	System.out.println("++++++++++++++++++++++");
+//
+//    	System.out.println("gname="+gname+";gsex="+gsex);
+//    	
+//    	System.out.println("++++++++++++++++++++++");
+//
+//       return null;
+//    }
+//    
+//    @RequestMapping(params = "p=testMvc")
+//    @ResponseBody
+//	public String testMvc(UserBo ub1){
+//    	String aaaString = ub1.getUserAccount();
+//    	ub1.setId("aaa");
+//		LoginService.insertUser(ub1);
+//       return null;
+//    }
+//   
+//
+// @RequestMapping(params = "p=shuuju")
+// @ResponseBody
+// public String shuuju(String userAccount,String userPassword){
+//	 Date date = new Date();
+//	 UserBo b = new  UserBo();
+//	b.setUserAccount(userAccount);
+//	b.setUserPassword(userPassword);
+//	b.setId(StringUtil.toString(date));
+//	 
+//	 LoginService.insertUser(b);
+//	 return null;
+//   }
+// 
+// 
+// @RequestMapping(params = "p=shuju")
+// @ResponseBody
+// public String shuju(UserInfoBo c){
+// Date date = new Date();
+// c.setId(StringUtil.toString(date));
+// c.setCertEmail("1");
+// c.setCertName("2");
+// c.setCertNo("3");
+// c.setCertPhone("4");
+// c.setCertSex("5");
+// c.setCertType("6");
+// c.setDescription("7");
+// c.setHeadPic("8");
+// c.setNickName("9");
+// c.setNote("10");
+// c.setQq("11");
+// c.setUserId("12");
+// c.setWx("13");
+// LoginService.insertUserInfo(c);
+// return null;
+//  }
 }
+
+	
