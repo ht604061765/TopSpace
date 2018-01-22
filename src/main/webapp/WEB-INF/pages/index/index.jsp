@@ -27,15 +27,13 @@
 				<img src="/static_resources/images/timg.jpg"
 					alt="Second slide">
 				<div class="indexText">
-					<h1>titleTwo</h1>
-					<p>contentTwo</p>
+					<h1>Liang JJ</h1>
 				</div>
 			</div>
 			<div class="item">
-				<img src="/static_resources/images/whiteBack1.png" alt="Third slide">
+				<img src="/static_resources/images/azj-3.jpg" alt="Third slide">
 				<div class="indexText">
-					<h1 class="text">titleThree</h1>
-					<p class="text">contrntThree</p>
+					<h1 class="text">一个小转角</h1>
 				</div>
 			</div>
 		</div>
