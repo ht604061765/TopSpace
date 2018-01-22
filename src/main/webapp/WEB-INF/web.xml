@@ -49,14 +49,25 @@
     <url-pattern>/*</url-pattern> 
   </filter-mapping>
   
+  <!-- 处理ThreadLocal，设置访问ip -->
+	<filter>
+		<filter-name>ThreadLocalFilter</filter-name>
+		<filter-class>com.topspace.customer.filter.ThreadLocalFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ThreadLocalFilter</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
+  
+  
+  <!-- 针对xss攻击专用 -->
   	<listener>
 			<listener-class>com.github.pukkaone.jsp.EscapeXmlELResolverListener</listener-class>
 	</listener>
 	
-	<session-config>
-		
-		<session-timeout>30</session-timeout>
 	
+	<session-config>
+		<session-timeout>10</session-timeout>
 	</session-config>
 	
 	<servlet>

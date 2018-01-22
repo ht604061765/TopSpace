@@ -8,6 +8,8 @@ package com.topspace.customer.login.controller;
 
 import java.io.File;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -31,6 +33,7 @@ import com.topspace.core.utils.URLUtil;
 import com.topspace.customer.login.entity.UserBo;
 import com.topspace.customer.login.entity.UserInfoBo;
 import com.topspace.customer.login.service.LoginService;
+import com.topspace.customer.util.login.LoginUtil;
 
 @SuppressWarnings("restriction")
 @Controller("LoginController")
@@ -42,11 +45,10 @@ public class LoginController extends BaseController{
 	
     @RequestMapping(params = "p=login", method = RequestMethod.POST)
 	public ModelAndView login(UserBo ub,HttpServletRequest request) throws Exception {
-    	String userAccount = ub.getUserAccount();
-    	String userPassword = ub.getUserPassword();
-
     	SessionUtil.setAttribute(request, "Current_Login_UserAccount", ub);
-    	
+    	String sysAccount = LoginUtil.getLoginAccount(request).getUserAccount();
+    	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	System.out.println("账号："+sysAccount + "于"  + formatter.format(new Date()) + "登陆系统");
     	ModelAndView mv = new ModelAndView("index/index");
 		return mv;
 	}
