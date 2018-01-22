@@ -46,11 +46,8 @@ public class shishiController extends BaseController{
     @ResponseBody
 	public String checkUser(String gname,String gsex){
     	System.out.println("++++++++++++++++++++++");
-
     	System.out.println("gname="+gname+";gsex="+gsex);
-    	
     	System.out.println("++++++++++++++++++++++");
-
        return null;
     }
     
