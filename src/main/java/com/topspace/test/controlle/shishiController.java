@@ -44,11 +44,12 @@ public class shishiController extends BaseController{
 	
 	@RequestMapping(params = "p=shishiz")
 	@ResponseBody
-	public String xinZeng(UserBo x){
+	public String xinZeng(String userAccount,String userPassword){
 		Date date = new Date();
+		UserBo x = new  UserBo();
 		x.setId(StringUtil.toString(date));
-		x.setUserAccount("userAccount");
-		x.setUserPassword("userPassword");
+		x.setUserAccount(userAccount);
+		x.setUserPassword(userPassword);
 		LoginService.insertUser(x);
 		return null;
 	}
