@@ -42,7 +42,7 @@
 }
 </style>
 <h1>资料<h1>
-<form class="form-horizontal" role="form" action="/shishi.do?p=shuju" method="post">
+<form class="form-horizontal" role="form" action="/shishi.do?p=shishiz" method="post">
   <div class="form-group">
     <label for="firstname" class="col-sm-2 control-label">名字</label>
     <div class="col-sm-10">
@@ -58,6 +58,26 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">保存</button>
+    </div>
+  </div>
+</form>
+   <HR>
+<form class="form-horizontal" role="form" action="/shishi.do?p=shishic" method="post">
+  <div class="form-group">
+    <label for="firstname" class="col-sm-2 control-label">名字</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="firstname" name="userAccount" placeholder="请输入名字">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="usersex" class="col-sm-2 control-label">性别</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="lastname" name="userPassword" placeholder="请输入性别">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">chaxun</button>
     </div>
   </div>
 </form>

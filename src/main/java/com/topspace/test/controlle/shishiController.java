@@ -41,7 +41,7 @@ public class shishiController extends BaseController{
 	
 	@Resource
 	LoginService LoginService;
-	
+//	增
 	@RequestMapping(params = "p=shishiz")
 	@ResponseBody
 	public String xinZeng(String userAccount,String userPassword){
@@ -54,6 +54,21 @@ public class shishiController extends BaseController{
 		return null;
 	}
 	
+	@RequestMapping(params = "p=shishic")
+	@ResponseBody
+	public String chaXun(){
+		UserBo ub =LoginService.selectUser();
+		ub.getUserAccount();
+		ub.getUserPassword();
+		
+		
+		return null;
+	}
+	public static void main(String[] args)throws Exception{
+		shishiController aa = new shishiController();
+		aa.chaXun();
+		
+	}
 	
 //    @RequestMapping(params = "p=test")
 //    @ResponseBody
