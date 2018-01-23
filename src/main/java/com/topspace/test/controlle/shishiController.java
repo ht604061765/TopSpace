@@ -32,7 +32,7 @@ import com.topspace.core.utils.StringUtil;
 import com.topspace.core.utils.URLUtil;
 import com.topspace.customer.login.entity.UserBo;
 import com.topspace.customer.login.entity.UserInfoBo;
-import com.topspace.customer.login.service.LoginService;
+import com.topspace.test.service.shishiService;
 
 @SuppressWarnings("restriction")
 @Controller("shishiController")
@@ -40,26 +40,25 @@ import com.topspace.customer.login.service.LoginService;
 public class shishiController extends BaseController{
 	
 	@Resource
-	LoginService LoginService;
+	shishiService shishiService;
 //	增
-	@RequestMapping(params = "p=shishiz")
-	@ResponseBody
-	public String xinZeng(String userAccount,String userPassword){
-		Date date = new Date();
-		UserBo x = new  UserBo();
-		x.setId(StringUtil.toString(date));
-		x.setUserAccount(userAccount);
-		x.setUserPassword(userPassword);
-		LoginService.insertUser(x);
-		return null;
-	}
+//	@RequestMapping(params = "p=shishiz")
+//	@ResponseBody
+//	public String xinZeng(String userAccount,String userPassword){
+//		Date date = new Date();
+//		UserBo x = new  UserBo();
+//		x.setId(StringUtil.toString(date));
+//		x.setUserAccount(userAccount);
+//		x.setUserPassword(userPassword);
+//		LoginService.insertUser(x);
+//		return null;
+//	}
 	
 	@RequestMapping(params = "p=shishic")
 	@ResponseBody
 	public String chaXun(){
-		UserBo ub =LoginService.selectUser();
-		ub.getUserAccount();
-		ub.getUserPassword();
+		
+		shishiService.selectUser();
 		
 		
 		return null;
