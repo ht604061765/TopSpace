@@ -18,7 +18,7 @@ import com.topspace.customer.login.entity.UserInfoBo;
 public class shishiService extends BaseService{
 public UserBo selectUser() {
 	QueryParam param = QueryParam.build();
-	UserBo ub = (UserBo) findListBySqlKey(UserBo.class,"selectUser",param);
+	UserBo ub = (UserBo) findListBySqlKey(UserBo.class,"selectUser",null);
 	return ub;
 }
 }
