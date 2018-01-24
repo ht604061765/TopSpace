@@ -57,9 +57,9 @@ public class shishiController extends BaseController{
 	@RequestMapping(params = "p=shishic")
 	@ResponseBody
 	public String chaXun(){
-		
-		shishiService.selectUser();
-		
+		UserBo x = new  UserBo();
+		x = shishiService.selectUser();
+		System.out.println(x);
 		
 		return null;
 	}
