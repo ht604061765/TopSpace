@@ -42,28 +42,70 @@
 		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
 	<div class="Pandora_Box">
-		<h3>这是潘多拉盒子里的内容</h3>
-		<div class="col-sm-6 col-md-3">
-         <div class="thumbnail">
-            <img src="/static_resources/images/Pandora.jpg" 
-             alt="通用的占位符缩略图">
-            <div class="caption">
-                <h3>缩略图标签</h3>
-                <p>一些示例文本。一些示例文本。</p>
-            </div>
+		<div class="Pandora_content">
+            <img src="/static_resources/images/Pandora.jpg" class="Pandora_Img">
+         <div class="Pandora_Text">
+         	<span>TopSpace-Title</span>
+         </div>
+         <div class="Pandora_Text_icon">
+         	<span>TopSpace</span>
+         	<span class="glyphicon glyphicon-heart"></span>
+         	<span class="glyphicon glyphicon-eye-open">
          </div>
     </div>
-		
+    <div class="Pandora_content">
+            <img src="/static_resources/images/Pandora.jpg" class="Pandora_Img">
+         <div class="Pandora_Text">
+         	<span>TopSpace-Title</span>
+         </div>
+         <div class="Pandora_Text_icon">
+         	<span>TopSpace</span>
+         	<span class="glyphicon glyphicon-heart"></span>
+         	<span class="glyphicon glyphicon-eye-open">
+         </div>
+    </div>
 	</div>
 	
 </div>
 	
 <style>
+.Pandora_Text_icon{
+	margin-left: 327px;
+	color: #999;
+    padding: 0 10px 0 0;
+    position: absolute;
+    font-weight: bold;
+    bottom: 15px;
+}
+
+.Pandora_Text{
+    font-size: 14px;
+    margin-left: 20px;
+    float: left;
+    padding-top: 18px;
+    color: #555;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.Pandora_Img{
+	float:left;
+	width: 314px;
+    height: 160px;
+}
+
+.Pandora_content{
+	position: relative;
+	float:left;
+	width: 50%;
+}
+
 .Pandora_Box{
     position: absolute;
-	width: 80%;
+	width: 90%;
 	height: auto;
-	left: 10%;
+	min-height:400px;
+	left: 5%;
 }
 
 .indexText {
