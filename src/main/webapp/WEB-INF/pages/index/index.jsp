@@ -41,27 +41,51 @@
 		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
 		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
+	
 	<div class="Pandora_Box">
+	<div class="lineBox"></div>
 		<div class="Pandora_content">
             <img src="/static_resources/images/Pandora.jpg" class="Pandora_Img">
          <div class="Pandora_Text">
-         	<span>TopSpace-Title</span>
+         	<span>TopSpace-Title1</span>
          </div>
          <div class="Pandora_Text_icon">
-         	<span>TopSpace</span>
-         	<span class="glyphicon glyphicon-heart"></span>
-         	<span class="glyphicon glyphicon-eye-open">
+         	<span class="texta">TopSpace &nbsp;|</span>
+         	<span class="glyphicon glyphicon-heart">5</span>
+         	<span class="glyphicon glyphicon-eye-open">1000</span>
          </div>
     </div>
     <div class="Pandora_content">
             <img src="/static_resources/images/Pandora.jpg" class="Pandora_Img">
          <div class="Pandora_Text">
-         	<span>TopSpace-Title</span>
+         	<span>TopSpace-Title2</span>
          </div>
          <div class="Pandora_Text_icon">
-         	<span>TopSpace</span>
-         	<span class="glyphicon glyphicon-heart"></span>
-         	<span class="glyphicon glyphicon-eye-open">
+         	<span class="texta">TopSpace &nbsp;|</span>
+         	<span class="glyphicon glyphicon-heart">5</span>
+         	<span class="glyphicon glyphicon-eye-open">1000</span>
+         </div>
+    </div>
+    <div class="Pandora_content">
+            <img src="/static_resources/images/Pandora.jpg" class="Pandora_Img">
+         <div class="Pandora_Text">
+         	<span>TopSpace-Title3</span>
+         </div>
+         <div class="Pandora_Text_icon">
+         	<span class="texta">TopSpace &nbsp;|</span>
+         	<span class="glyphicon glyphicon-heart">5</span>
+         	<span class="glyphicon glyphicon-eye-open">1000</span>
+         </div>
+    </div>
+    <div class="Pandora_content">
+            <img src="/static_resources/images/Pandora.jpg" class="Pandora_Img">
+         <div class="Pandora_Text">
+         	<span>TopSpace-Title4</span>
+         </div>
+         <div class="Pandora_Text_icon">
+         	<span class="texta">TopSpace &nbsp;|</span>
+         	<span class="glyphicon glyphicon-heart">5</span>
+         	<span class="glyphicon glyphicon-eye-open">1000</span>
          </div>
     </div>
 	</div>
@@ -69,13 +93,29 @@
 </div>
 	
 <style>
+.lineBox{
+	margin: 40px 0 34px 0;
+	height: 1px;
+	background-color: #d4d5d5;
+}
+
+.texta{
+    display: inline-block;
+	width: 88px;
+}
+
+.glyphicon-heart{
+	width: 33px;
+}
+
 .Pandora_Text_icon{
+	width: 200px;
 	margin-left: 327px;
 	color: #999;
     padding: 0 10px 0 0;
     position: absolute;
     font-weight: bold;
-    bottom: 15px;
+    bottom: 50px;
 }
 
 .Pandora_Text{
@@ -98,6 +138,7 @@
 	position: relative;
 	float:left;
 	width: 50%;
+	height: 200px;
 }
 
 .Pandora_Box{
