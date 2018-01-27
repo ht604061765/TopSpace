@@ -46,10 +46,11 @@ public class LoginController extends BaseController{
 	LoginService LoginService;
 	
 	@RequestMapping(params = "p=testUserList")
-	public UserBo testUserList() {
+	public ModelAndView testUserList() {
+		ModelAndView mv = new ModelAndView("test/test");
 		List<UserBo> ub = LoginService.selectUserList();
-		System.out.println("111111111111");
-		return null;
+		mv.addObject("userList",ub);
+		return mv;
 		
 	}
 	
@@ -106,12 +107,13 @@ public class LoginController extends BaseController{
 		user.setId(userId);
 		user.setUserAccount(request.getParameter("userAccount").toString());
 		user.setUserPassword(request.getParameter("userPassword").toString());
+		user.setRegTime(new Date());
 		LoginService.insertUser(user);
 		
 		userInfo.setId(PKCreator.getPrimaryKey());
 		userInfo.setUserId(userId);
 		LoginService.insertUserInfo(userInfo);
-		ModelAndView mv = new ModelAndView("index");
+		ModelAndView mv = new ModelAndView("index/index");
 		return mv;
 
 	}

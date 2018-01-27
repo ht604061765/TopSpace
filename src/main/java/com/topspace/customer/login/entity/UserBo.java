@@ -7,6 +7,7 @@
 package com.topspace.customer.login.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.topspace.core.framework.bo.BaseBO;
 
@@ -18,7 +19,7 @@ public class UserBo extends BaseBO implements Serializable{
 	private String userAccount; 	//账户
 	private String userCode;		//（备用字段）
 	private String userPassword; 	//密码
-	private String regTime;			//注册时间
+	private Date regTime;			//注册时间
 	private String isCert;			//是否认证
 	private String description;		//描述
 	private String note;			//备注
@@ -47,11 +48,11 @@ public class UserBo extends BaseBO implements Serializable{
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public String getRegTime() {
+	public Date getRegTime() {
 		return regTime;
 	}
-	public void setRegTime(String regTime) {
-		this.regTime = regTime;
+	public void setRegTime(Date date) {
+		this.regTime = date;
 	}
 	public String getIsCert() {
 		return isCert;

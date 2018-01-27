@@ -9,7 +9,7 @@
 		src="/static_resources/images/logo0126(1590X700).jpg">
 	</div>
 	<div class="col-md-8 col-xs-6">
-	<a href="/login.do?p=testUserList">爱转角链接</a>
+	<a href="/login.do?p=testUserList">测试专用</a>
 	</div>
 </div>
 </div></div>
