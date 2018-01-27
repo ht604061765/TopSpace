@@ -63,8 +63,5 @@
   </div>
 </form>
    <HR>
-   <div class="col-md-8 col-xs-6">
-	<a href="/shishi.do?p=shishic">资料查询</a>
-	</div>
 </body>
 </html>

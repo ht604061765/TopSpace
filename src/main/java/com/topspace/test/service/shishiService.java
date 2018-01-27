@@ -19,8 +19,8 @@ import com.topspace.customer.login.entity.UserInfoBo;
 public class ShishiService extends BaseService{
 	
 	@SuppressWarnings("unchecked")
-	public List<UserBo> selectUser() {
+	public List<UserBo> selectUserList() {
 		QueryParam param = QueryParam.build();
-		return findListBySqlKey(UserBo.class,"selectUser",param);
+		return findListBySqlKey(UserBo.class,"selectUserList",param);
 }
 }

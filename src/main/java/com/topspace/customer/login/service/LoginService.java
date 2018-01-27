@@ -46,6 +46,19 @@ public class LoginService extends BaseService{
 		insert(ub);
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void insertUserInfo(UserInfoBo uib) {
 		insert(uib);
 	}
