@@ -6,7 +6,7 @@
 <div class="row">
 <div class="head_picture_div col-md-4 col-xs-6">
 	<img class="head_pciture"
-		src="/static_resources/images/logo1220(1590X700).jpg">
+		src="/static_resources/images/logo0126(1590X700).jpg">
 	</div>
 	<div class="col-md-8 col-xs-6">
 	<a href="#">爱转角链接</a>
@@ -31,7 +31,7 @@
 }
 
 .head_line {
-	background: black;
+	background: #fcc916;
 	weight: 100%;
 	height: 6px;
 }
