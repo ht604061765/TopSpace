@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -29,6 +30,7 @@ import com.topspace.core.framework.misc.SystemConstant;
 import com.topspace.core.framework.session.SessionUtil;
 import com.topspace.core.utils.Json4Return;
 import com.topspace.core.utils.PKCreator;
+import com.topspace.core.utils.StringUtil;
 import com.topspace.core.utils.URLUtil;
 import com.topspace.customer.login.entity.UserBo;
 import com.topspace.customer.login.entity.UserInfoBo;
@@ -42,6 +44,14 @@ public class LoginController extends BaseController{
 
 	@Resource
 	LoginService LoginService;
+	
+	@RequestMapping(params = "p=testUserList")
+	public UserBo testUserList() {
+		List<UserBo> ub = LoginService.selectUserList();
+		System.out.println("111111111111");
+		return null;
+		
+	}
 	
     @RequestMapping(params = "p=login", method = RequestMethod.POST)
 	public ModelAndView login(UserBo ub,HttpServletRequest request) throws Exception {

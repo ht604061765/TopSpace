@@ -7,6 +7,7 @@
 package com.topspace.customer.login.service;
 
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
@@ -32,6 +33,12 @@ public class LoginService extends BaseService{
 	public UserBo selectUser(String userAccount) {
 		QueryParam param = QueryParam.build().add("userAccount", userAccount);
 		UserBo ub = (UserBo) findOneBySqlKey(UserBo.class,"selectUser",param);
+		return ub;
+	}
+	
+	public List<UserBo> selectUserList() {
+		QueryParam param = QueryParam.build();
+		List<UserBo> ub = findListBySqlKey(UserBo.class,"selectUserList",param);
 		return ub;
 	}
 	

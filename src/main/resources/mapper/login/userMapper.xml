@@ -19,4 +19,8 @@
    <select id="selectUser" resultType="com.topspace.customer.login.entity.UserBo">
     	select * from t_user WHERE userAccount = #{userAccount}
    </select>
+   
+      <select id="selectUserList" resultType="com.topspace.customer.login.entity.UserBo">
+    	select * from t_user
+   </select>
 </mapper>
