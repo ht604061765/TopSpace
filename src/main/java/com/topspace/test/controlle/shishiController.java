@@ -62,8 +62,23 @@ public class shishiController extends BaseController{
 		return mv;
 		
 	}
-}
+	@RequestMapping(params = "p=shishis")
+	public ModelAndView shanchu(String userAccount,String userPassword) throws Exception{
+		UserBo ub = LoginService.selectUser();
+	    ub.getId();
+	    
+		UserBo X= new UserBo();
+		String id_1 = PKCreator.getPrimaryKey();
+		X.setId(id_1);
+		X.setUserAccount(userAccount);
+	    X.setUserPassword(userPassword);
+	    X.setRegTime(new Date());
+	    LoginService.insertUser(X);
+	    ModelAndView mv = new ModelAndView("index/index");
+		return mv;
 	
+}
+}	
 //	public static void main(String[] args) throws Exception{
 //		shishiController aa = new shishiController();
 //		aa.chaXun();
