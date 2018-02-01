@@ -30,7 +30,7 @@ import com.topspace.test.service.ShishiService;
 public class shishiController extends BaseController{
 	
 	@Resource
-	ShishiService shishiService;
+	ShishiService ShishiService;
 	
 	@Resource
 	LoginService LoginService;
@@ -63,20 +63,13 @@ public class shishiController extends BaseController{
 		
 	}
 	@RequestMapping(params = "p=shishis")
-	public ModelAndView shanchu(String userAccount,String userPassword) throws Exception{
-		UserBo ub = LoginService.selectUser();
-	    ub.getId();
-	    
-		UserBo X= new UserBo();
-		String id_1 = PKCreator.getPrimaryKey();
-		X.setId(id_1);
-		X.setUserAccount(userAccount);
-	    X.setUserPassword(userPassword);
-	    X.setRegTime(new Date());
-	    LoginService.insertUser(X);
-	    ModelAndView mv = new ModelAndView("index/index");
+	public ModelAndView shanchu(String id) throws Exception{
+		ShishiService.deleteUser(id);
+		ModelAndView mv = new ModelAndView("test/test1");
+		List<UserBo> ub = LoginService.selectUserList();
+		mv.addObject("userList",ub);
 		return mv;
-	
+		
 }
 }	
 //	public static void main(String[] args) throws Exception{

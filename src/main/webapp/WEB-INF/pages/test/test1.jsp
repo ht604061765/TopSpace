@@ -20,6 +20,7 @@
 			<td class="regTime"><fmt:formatDate value="${item.regTime}"
 					pattern="yyyy-MM-dd HH:mm:ss" /></td>
 			</td>
+			<td><a href="shishi.do?p=shishis&id=${item.id}"><button type="button">删除</button></a></td>			
 		</tr>
 	</c:forEach>
 

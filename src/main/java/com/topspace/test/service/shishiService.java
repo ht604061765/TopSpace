@@ -23,4 +23,10 @@ public class ShishiService extends BaseService{
 		QueryParam param = QueryParam.build();
 		return findListBySqlKey(UserBo.class,"selectUserList",param);
 }
+	@SuppressWarnings("unchecked")
+	public UserBo deleteUser(String id) {
+		QueryParam param = QueryParam.build().add("id", id);
+		UserBo ub = (UserBo) findOneBySqlKey(UserBo.class,"deleteUser",param);
+		return ub;
+ }
 }
