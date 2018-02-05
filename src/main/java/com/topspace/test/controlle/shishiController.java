@@ -71,6 +71,16 @@ public class shishiController extends BaseController{
 		return mv;
 		
 }
+	@RequestMapping(params = "p=shishig")
+	public ModelAndView xiugai(String id,String userAccount) throws Exception{
+		
+		ShishiService.deleteUser(id);
+		ModelAndView mv = new ModelAndView("test/test1");
+		List<UserBo> ub = LoginService.selectUserList();
+		mv.addObject("userList",ub);
+		return mv;
+		
+}
 }	
 //	public static void main(String[] args) throws Exception{
 //		shishiController aa = new shishiController();
