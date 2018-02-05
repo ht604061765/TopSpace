@@ -73,8 +73,10 @@ public class shishiController extends BaseController{
 }
 	@RequestMapping(params = "p=shishig")
 	public ModelAndView xiugai(String id,String userAccount) throws Exception{
-		
-		ShishiService.deleteUser(id);
+		UserBo X= new UserBo();
+		X.setId(id);
+		X.setUserAccount(userAccount);
+		ShishiService.mixUser(X);
 		ModelAndView mv = new ModelAndView("test/test1");
 		List<UserBo> ub = LoginService.selectUserList();
 		mv.addObject("userList",ub);
