@@ -36,9 +36,11 @@ public class ShishiService extends BaseService{
 //		return ub;
 //}
 	@SuppressWarnings("unchecked")
-	public UserBo mixUser(UserBo ub) {
-		QueryParam param = QueryParam.build().add("UserBo", ub);
-		UserBo ub_1 = (UserBo) findOneBySqlKey(UserBo.class,"changeUser",param);
-		return ub_1;
+	public Integer mixUser(UserBo ub) {
+		String s = ub.getId();
+		System.out.println(s);
+		QueryParam param = QueryParam.build().add("ub", ub);
+		Integer in1 =updateBySqlKey(UserBo.class,"changeUser",param);
+		return in1;
 }
 }
