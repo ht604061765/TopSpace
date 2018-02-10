@@ -26,7 +26,7 @@
     <select id="deleteUser" resultType="java.lang.Integer" parameterType="java.util.Map">
     	delete from t_user WHERE id = #{id}
    </select>
-   <select id="changeUser" resultType="java.lang.Integer" parameterType="com.topspace.customer.login.entity.UserBo">
+   <select id="update" parameterType="com.topspace.customer.login.entity.UserBo">
     	update t_user set t_user.userAccount = #{userAccount} WHERE id = #{id}
    </select>
 </mapper>

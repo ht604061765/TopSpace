@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.topspace.core.framework.bo.BaseBO;
 import com.topspace.core.framework.service.BaseService;
 import com.topspace.core.framework.utils.QueryParam;
 import com.topspace.customer.login.entity.UserBo;
@@ -36,11 +37,10 @@ public class ShishiService extends BaseService{
 //		return ub;
 //}
 	@SuppressWarnings("unchecked")
-	public Integer mixUser(UserBo ub) {
-		String s = ub.getId();
-		System.out.println(s);
-		QueryParam param = QueryParam.build().add("ub", ub);
-		Integer in1 =updateBySqlKey(UserBo.class,"changeUser",param);
-		return in1;
+	public void mixUser(UserBo ub) {
+		update(ub);	
+//		 param param = param.build().add("ub", ub);
+//		updateBySqlKey(UserBo.class,"changeUser",param);
+//		
 }
 }
