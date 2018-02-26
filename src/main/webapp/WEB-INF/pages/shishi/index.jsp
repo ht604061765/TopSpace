@@ -16,6 +16,17 @@
 	<img class="head_pciture"
 		src="/static_resources/images/logo1220(1590X700).jpg">
 	</div>
+<div class="head_picture_div col-md-4 ">
+<img class="head_pciture"
+		src="/static_resources/images/h2.jpg">	
+</div>
+<div class=" col-md-4 col-xs-6"">
+<ul>
+  <li>登录</li>
+  <li>注册</li>
+</ul>
+		
+</div>
 </div>
 </div></div>
 <style>
