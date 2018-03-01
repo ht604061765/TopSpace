@@ -19,21 +19,21 @@
 	<div id="loginBox" class="loginBox">
 		<form id="loginForm" class="form-horizontal" role="form" action="/login.do?p=login" method="post">
 			<div class="form-group">
-				<label for="firstname" class="col-sm-2 control-label" >账号</label>
-				<div class="col-sm-8">
+				<label for="firstname" class="col-xs-2 col-sm-2  control-label" >账号</label>
+				<div class="col-xs-8 col-sm-8 ">
 					<input type="text" class="form-control" id="loginAcc" name="userAccount"
 						placeholder="请输入账号">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label" >密码</label>
-				<div class="col-sm-8">
+				<label for="lastname" class="col-xs-2 col-sm-2 control-label" >密码</label>
+				<div class="col-xs-8 col-sm-8">
 					<input type="text" class="form-control" id="loginPwd" name="userPassword"
 						placeholder="请输入密码">
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
+				<div class="col-sm-offset-2 col-xs-10 col-sm-10">
 					<div class="checkbox">
 						<label> <input type="checkbox"> 请记住我
 						</label>
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
+				<div class="col-sm-offset-2 col-sm-10  col-xs-12">
 					<button type="button" class="btn btn-default loginbtn" onclick="login()">登录</button>
 					<button type="button" class="btn btn-default regbtn" onclick="showRegBox()">注册一个</button>
 				</div>
