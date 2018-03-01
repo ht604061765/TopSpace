@@ -26,9 +26,8 @@
 <img class="head_pciture"
 		src="/static_resources/images/h2.jpg">	
 </div>
-<div class=" col-md-4 col-xs-6"">
-<a href="#">登录</a>
-<a href="#">注册</a>		
+<div class=" col-md-4 col-xs-6"style="margin-top:30px">
+<a href="/login/index.jsp">登录/注册</a>		
 </div>
 
 </div>
@@ -69,11 +68,11 @@
 </h1>
 </div>
 
-<form class="form-horizontal" role="form">
+<form class="form-horizontal" role="form" action="/shishi.do?p=shishiz" method="post">
     <div class="form-group"style="margin-top:30px">
         <label for="firstname" class="col-sm-2 control-label">姓名</label>
         <div class="col-sm-10"style="width:300px">
-            <input type="text" class="form-control" id="firstname" 
+            <input type="text" class="form-control" id="firstname" name="userAccount"
                    placeholder="请输入姓名">
         </div>
     </div>
