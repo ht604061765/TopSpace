@@ -4,22 +4,49 @@
 </div>
 <div class="container-fluid">
 <div class="row">
-<div class="head_picture_div col-md-4 col-xs-6">
+<div class="head_top_div col-md-8 col-xs-12">
 	<img class="head_pciture"
-		src="/static_resources/images/logo0126(1590X700).jpg">
+		src="/static_resources/images/logo1220(1590X700).jpg">
 	</div>
-	<div class="col-md-8 col-xs-6">
+	<div class="head_top_div col-md-4 col-xs-6">
+		<button type="button" class="btn btn-default btn-lg find">
+  			<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> <b>找人代课</b>
+		</button>
+		<button type="button" class="btn btn-default btn-lg i_can">
+  			<span class="glyphicon glyphicon-user" aria-hidden="true"></span> <b>我能代课</b>
+		</button>
+	</div>
+	<!--  <div class="col-md-8 col-xs-6">
 	<a href="/login.do?p=testUserList">测试专用</a>
-	</div>
+	</div> -->
 </div>
 </div></div>
 <style>
+.find:hover{
+    margin-top: 26px;
+    background-color: #85a8e4;
+    opacity:0.5;
+}
+.i_can:hover{
+    margin-top: 26px;
+    background-color: #85a8e4;
+    opacity:0.5;
+}
+.find{
+    margin-top: 26px;
+    background-color: #85a8e4;
+}
+.i_can{
+    margin-top: 26px;
+    background-color: #85a8e4;
+}
+
 .head_button {
 	margin-top:30px;
 	margin-left:30px;
 	float: left;
 }
-.head_picture_div {
+.head_top_div {
 	height: 100px;
 }
 .head_pciture {
@@ -31,8 +58,7 @@
 }
 
 .head_line {
-	background: #fcc916;
-	weight: 100%;
-	height: 6px;
+	background: #080808;
+	height: 3px;
 }
 </style>
