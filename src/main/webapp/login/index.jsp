@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>登陆</title>
 <link rel="stylesheet"
 	href="/static_resources/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -19,14 +19,14 @@
 	<div id="loginBox" class="loginBox">
 		<form id="loginForm" class="form-horizontal" role="form" action="/login.do?p=login" method="post">
 			<div class="form-group">
-				<label for="firstname" class="col-xs-2 col-sm-2  control-label" >账号</label>
+				<label for="firstname" class="col-xs-4 col-sm-2  control-label" >账号</label>
 				<div class="col-xs-8 col-sm-8 ">
 					<input type="text" class="form-control" id="loginAcc" name="userAccount"
 						placeholder="请输入账号">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="lastname" class="col-xs-2 col-sm-2 control-label" >密码</label>
+				<label for="lastname" class="col-xs-4 col-sm-2 control-label" >密码</label>
 				<div class="col-xs-8 col-sm-8">
 					<input type="text" class="form-control" id="loginPwd" name="userPassword"
 						placeholder="请输入密码">
