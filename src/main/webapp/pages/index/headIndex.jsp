@@ -22,6 +22,12 @@
 </div>
 </div></div>
 <style>
+.glyphicon-tasks{
+	top: 4px;
+}
+.glyphicon-user{
+	top: 4px;
+}
 .find:hover{
     margin-top: 26px;
     background-color: #85a8e4;
