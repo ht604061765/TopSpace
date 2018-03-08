@@ -93,6 +93,12 @@
 </div>
 	
 <style>
+.glyphicon-eye-open{
+	top: 4px;
+}
+.glyphicon-heart{
+	top: 4px;
+}
 .lineBox{
 	margin: 40px 0 34px 0;
 	height: 1px;
