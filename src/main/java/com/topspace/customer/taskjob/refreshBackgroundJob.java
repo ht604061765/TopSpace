@@ -21,7 +21,7 @@ public class refreshBackgroundJob implements Job{
 	public void execute(JobExecutionContext context)
 			throws JobExecutionException {
 		// TODO Auto-generated method stub
-		String url = "https://source.unsplash.com/collection/190727/1600x900";
+		String url = "https://www.dujin.org/sys/bing/1920.php";
         String fileName = "Login_backGround.png";
         File file = new File("E:/03workspace/TopSpaceMaven/src/main/webapp/static_resources/images/", fileName);
 
