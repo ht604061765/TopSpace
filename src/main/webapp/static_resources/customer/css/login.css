@@ -67,8 +67,8 @@ text-align:center;
 .loginBox {
 	margin-top:5%;
 	margin-left:10%;
-	height: 40%;
-	width: 30%;
+	height: auto;
+	width: 100%;
 	background:rgba(115, 106, 106, 0.38);
 	color:#FFF;
 	border-radius:20px;
@@ -76,8 +76,8 @@ text-align:center;
 .loginBox:hover {
 	margin-top:5%;
 	margin-left:10%;
-	height: 40%;
-	width: 30%;
+	height: auto;
+	width: 100%;
 	background:rgba(115, 106, 106, 0.5);
 	color:#FFF;
 	border-radius:20px;
