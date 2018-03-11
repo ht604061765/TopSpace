@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/static_resources/customer/css/login.css">
 </head>
 <body>
-	<div id="loginBox" class="loginBox">
+	<div id="loginBox" class="loginBox col-xs-12 col-sm-6">
 		<form id="loginForm" class="form-horizontal" role="form" action="/login.do?p=login" method="post">
 			<div class="form-group">
 				<label for="firstname" class="col-xs-4 col-sm-2  control-label" >账号</label>
