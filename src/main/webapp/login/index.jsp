@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/static_resources/customer/css/login.css">
 </head>
 <body>
-	<div id="loginBox" class="loginBox col-xs-12 col-sm-6">
+	<div id="loginBox" class="loginBox">
 		<form id="loginForm" class="form-horizontal" role="form" action="/login.do?p=login" method="post">
 			<div class="form-group">
 				<label for="firstname" class="col-xs-4 col-sm-2  control-label" >账号</label>
@@ -52,35 +52,35 @@
 		<div id="regBox" class="regBox">
 		<form id="regForm" class="form-horizontal" role="form" action="/login.do?p=register" method="post">
 			<div class="form-group">
-				<label for="userAccount" class="col-sm-2 control-label">注册账号：</label>
-				<div class="col-sm-8">
+				<label for="userAccount" class="col-xs-4 col-sm-2 control-label">注册账号：</label>
+				<div class="col-xs-6 col-sm-8">
 					<input type="text" class="form-control" id="userAccount" name="userAccount"
 						placeholder="请输入账号" onblur="isHasAccount()">
 				</div>
-				<div class="col-sm-2">
+				<div class="col-xs-2 col-sm-2">
 				<span class="glyphicon glyphicon-exclamation-sign notice" id="account_notice" data-toggle="tooltip" data-placement="right" title="账号必填，而且要唯一"></span>
 				<span class="glyphicon glyphicon-ok can_register" id="can_register"></span>
 				</div>
 			</div>
-			<div class="form-group">
-				<label for="inputPassword" class="col-sm-2 control-label">注册密码：</label>
-				<div class="col-sm-8">
+			<div class="form-group ">
+				<label for="inputPassword" class="col-xs-4 col-sm-2 control-label">注册密码：</label>
+				<div class="col-xs-6 col-sm-8">
 					<input type="password" class="form-control" id="inputPassword" 
 					placeholder="请输入密码" onblur="VerificationPwdLong()">
 					<input type="hidden" class="form-control" id="userPassword" name="userPassword">
 				</div>
-				<div class="col-sm-2">
+				<div class="col-xs-2 col-sm-2">
 				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="密码必填，最短6位数"></span>
 				</div>
 			</div>
 						<div class="form-group">
-				<label for="VerificationPwd" class="col-sm-2 control-label">验证密码：</label>
-				<div class="col-sm-8">
+				<label for="VerificationPwd" class=" col-xs-4 col-sm-2 control-label">验证密码：</label>
+				<div class="col-xs-6 col-sm-8">
 					<input type="password" class="form-control" id="VerificationPwd"
 						placeholder="请输入密码" onblur="VerificationPwdEqual()">
 						
 				</div>
-				<div class="col-sm-2">
+				<div class="col-xs-2 col-sm-2">
 				<span class="glyphicon glyphicon-exclamation-sign notice" data-toggle="tooltip" data-placement="right" title="与密码一致的验证密码"></span>
 				</div>
 			</div>

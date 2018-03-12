@@ -41,12 +41,12 @@ text-align:center;
 
 .regBox {
   	position: absolute;
-  	left: 20%;
-  	top: 20px;
+  	left: 10%;
+  	top:20%;
 	display:none;
 	margin:0 auto;
 	height: auto;
-	width: 60%;
+	width: 75%;
 	background:rgba(251, 248, 248, 0.45);
 	color:#3a2e2e;
 	border-radius:5px;
@@ -54,33 +54,41 @@ text-align:center;
 
 .regBox:hover {
   	position: absolute;
-  	left: 20%;
-  	top: 20px;
+  	left: 10%;
+  	top: 20%;
 	display:none;
 	margin:0 auto;
 	height: auto;
-	width: 60%;
+	width: 75%;
 	background:rgba(251, 248, 248, 0.65);
 	color:#3a2e2e;
 	border-radius:5px;
 }
 .loginBox {
 	
-	
-	
+	position: absolute;
+  	left: 20%;
+  	top: 30%;
+	height: auto;
+	width: 60%;
 	background:rgba(115, 106, 106, 0.38);
 	color:#FFF;
 	border-radius:20px;
 }
 .loginBox:hover {
 	
-	
-	
+	position: absolute;
+  	left: 20%;
+  	top: 30%;
+	height: auto;
+	width: 60%;
 	background:rgba(115, 106, 106, 0.5);
 	color:#FFF;
 	border-radius:20px;
 }
-html{height:100%; }
+html{
+	height:100%; 
+	}
 body {
 	background: url(/static_resources/images/Login_backGround.png) fixed center center no-repeat;
 	background-size:100% 100%;
