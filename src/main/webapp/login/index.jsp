@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/static_resources/customer/css/login.css">
 </head>
 <body>
-	<div id="loginBox" class="loginBox">
+	<div id="loginBox" class="loginBox col-xs-10 col-sm-8">
 		<form id="loginForm" class="form-horizontal" role="form" action="/login.do?p=login" method="post">
 			<div class="form-group">
 				<label for="firstname" class="col-xs-4 col-sm-2  control-label" >账号</label>
@@ -49,7 +49,7 @@
 		</form>
 	</div>
 	
-		<div id="regBox" class="regBox">
+		<div id="regBox" class="regBox col-xs-10 col-sm-8">
 		<form id="regForm" class="form-horizontal" role="form" action="/login.do?p=register" method="post">
 			<div class="form-group">
 				<label for="userAccount" class="col-xs-4 col-sm-2 control-label">注册账号：</label>
