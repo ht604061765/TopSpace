@@ -25,7 +25,7 @@ public class refreshBackgroundJob implements Job{
 		// TODO Auto-generated method stub
 		String url = "https://www.dujin.org/sys/bing/1920.php";
         String fileName = "Login_backGround.png";
-        File file = new File("E:/03workspace/TopSpace/src/main/webapp/static_resources/images/", fileName);
+        File file = new File("/static_resources/images/", fileName);
 
         InputStream inputStream = URLUtil.getInputStreamByGet(url);
          URLUtil.saveData(inputStream, file);

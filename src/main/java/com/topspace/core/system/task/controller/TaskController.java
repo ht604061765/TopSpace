@@ -24,6 +24,7 @@ public class TaskController extends BaseController{
 	@Resource(name = "TaskService")
 	TaskService taskService; 
 
+	//现在需要手动插入定时任务数据  http://localhost:8090/Task.do?m=addTask
 	@RequestMapping(params = "m=addTask")
 	@ResponseBody
 	public void addTask(){
