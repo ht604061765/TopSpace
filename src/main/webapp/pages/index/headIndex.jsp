@@ -4,9 +4,12 @@
 </div>
 <div class="container-fluid">
 <div class="row">
-<div class="head_top_div col-md-8 col-xs-12">
+<div class="head_top_div col-md-4 col-xs-6">
 	<img class="head_pciture"
 		src="/static_resources/images/logo1220(1590X700).jpg">
+	</div>
+	<div class="head_top_div col-md-4 col-xs-6">
+		<button type="button" class="btn btn-info weight">体重管家</button>
 	</div>
 	<div class="head_top_div col-md-4 col-xs-6">
 		<button type="button" class="btn btn-default btn-lg find">
@@ -37,6 +40,9 @@
     margin-top: 26px;
     background-color: #85a8e4;
     opacity:0.5;
+}
+.weight{
+	margin-top: 26px;
 }
 .find{
     margin-top: 26px;

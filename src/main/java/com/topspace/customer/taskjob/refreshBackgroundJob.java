@@ -14,18 +14,20 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+import com.topspace.core.framework.misc.SystemConstant;
 import com.topspace.core.utils.URLUtil;
 
 public class refreshBackgroundJob implements Job{
+	private final static String backGroundFile = SystemConstant.getRealPath()
+			+ "static_resources/images/Login_backGround.png";
 
 	@Override
 	public void execute(JobExecutionContext context)
 			throws JobExecutionException {
 		System.out.println("【更新背景图】开始");
 		// TODO Auto-generated method stub
-		String url = "https://www.dujin.org/sys/bing/1920.php";
-        String fileName = "Login_backGround.png";
-        File file = new File("/static_resources/images/", fileName);
+		String url = "https://www.dujin.org/sys/bing/1920.png";
+        File file = new File(backGroundFile);
 
         InputStream inputStream = URLUtil.getInputStreamByGet(url);
          URLUtil.saveData(inputStream, file);
