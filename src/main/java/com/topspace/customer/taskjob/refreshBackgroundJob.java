@@ -31,7 +31,7 @@ public class refreshBackgroundJob implements Job{
 			throws JobExecutionException {
 		System.out.println("【更新背景图】开始");
 		Map<String, Object> loadImageMsg = HttpRequestUtil.httpsRequest("http://cn.bing.com/HPImageArchive.aspx?idx=0&n=1&format=js", "POST", "");
-;		List<Map<String, Object>> imageList = (List<Map<String, Object>>) loadImageMsg.get("images");
+		List<Map<String, Object>> imageList = (List<Map<String, Object>>) loadImageMsg.get("images");
 		String backUrl = (String) imageList.get(0).get("url");
 
 		String imageUrl = frontUrl + backUrl;
