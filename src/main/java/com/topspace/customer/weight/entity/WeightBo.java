@@ -9,7 +9,9 @@ package com.topspace.customer.weight.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class WeightBo implements Serializable{
+import com.topspace.core.framework.bo.BaseBO;
+
+public class WeightBo extends BaseBO implements Serializable{
 
 	/**
 	 * @author Hunter

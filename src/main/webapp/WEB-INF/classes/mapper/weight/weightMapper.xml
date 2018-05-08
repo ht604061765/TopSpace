@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.topspace.customer.weight.entity.WeightBo">
+
+<insert id="insert" parameterType="com.topspace.customer.weight.entity.WeightBo">
+		INSERT INTO t_weight
+		(id,memberId,memberName,weight,weightTime,statusCode,statusName,createMemberId,creatememberName,createTime,description,note)
+		VALUES
+		(#{id}, #{memberId}, #{memberName}, #{weight},
+		#{weightTime},#{statusCode},#{statusName},#{createMemberId},#{creatememberName},#{createTime}#{description},#{note})
+	</insert>
+	
+	</mapper>

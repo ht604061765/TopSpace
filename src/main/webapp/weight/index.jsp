@@ -10,7 +10,10 @@
 <link rel="stylesheet"
 	href="/static_resources/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <script src="/static_resources/jquery-3.2.1.min.js"></script>
+<script src="/static_resources/jquery.md5.js"></script>
 <script src="/static_resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/static_resources/js/ajax.js"></script>
+<script src="/static_resources/js/cookie.js"></script>
 </head>
 <body>
 <div class="head">
@@ -54,6 +57,18 @@
 	weight: 100%;
 	height: 6px;
 }
+.logWeightBox {
+	
+	position: absolute;
+  	left: 15%;
+  	top: 30%;
+	height: auto;
+	weight: 30%;
+
+	background:rgba(115, 106, 106, 0.5);
+	color:#FFF;
+	border-radius:20px;
+}
 
 </style>
 <div>
@@ -63,25 +78,26 @@
 <small class="smalltitle">撑一撑 ！！称一称！!</small>
 </h1>
 </div>
-<form class="form-horizontal" role="form" action="/shishi.do?p=shishiz" method="post">
+<div class="logWeightBox">
+<form class="form-horizontal" role="form" action="/weight.do?p=save" method="post">
     <div class="form-group"style="margin-top:30px">
         <label for="firstname" class="col-sm-2 control-label">姓名</label>
         <div class="col-sm-10"style="width:300px">
-            <input type="text" class="form-control" id="firstname" name="userAccount"
+            <input type="text" class="form-control" id="firstname" name="memberName"
                    placeholder="请输入姓名">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" >
         <label for="lastname" class="col-sm-2 control-label">体重</label>
         <div class="col-sm-10"style="width:300px">
-            <input type="text" class="form-control" id="lastname" 
+            <input type="text" class="form-control" id="weight" 
                    placeholder="请输入实时体重">
         </div>
     </div>
     <div class="form-group">
         <label for="lastname" class="col-sm-2 control-label">称量时间</label>
         <div class="col-sm-10"style="width:300px">
-            <input type="text" class="form-control" id="lastname" 
+            <input type="text" class="form-control" id="weightTime" 
                    placeholder="请输入称量时间">
         </div>
     </div>
@@ -92,3 +108,12 @@
     </div>
 </form>
 </div>
+</div>
+
+<div class="alert alert-info caution_Box" id="caution_userAccount">
+	<strong>信息：请输入您要注册的账户！</strong>
+</div>
+<script>
+$(function () { $("[data-toggle='tooltip']").tooltip(); });
+
+</script>
