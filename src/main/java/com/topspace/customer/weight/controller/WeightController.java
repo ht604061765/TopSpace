@@ -29,13 +29,13 @@ public class WeightController extends BaseController {
 	WeightService WeightService;
 
 	@RequestMapping(params = "p=save")
-	public Json4Return weightSave(String memberName,String weight,Date weightTime) {
+	public String weightSave(String memberName,String weight) {
 		WeightBo X= new WeightBo();
 		String id_1 = PKCreator.getPrimaryKey();
 	    X.setId(id_1);
 	    X.setMemberName(memberName);
 	    X.setWeight(weight);
-	    X.setWeightTime(weightTime);
+//	    X.setWeightTime(weightTime);
 	    WeightService.weightinsert(X);
 		return null;
 		

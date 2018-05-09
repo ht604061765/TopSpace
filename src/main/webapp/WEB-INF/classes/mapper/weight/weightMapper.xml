@@ -9,8 +9,8 @@
 		INSERT INTO t_weight
 		(id,memberId,memberName,weight,weightTime,statusCode,statusName,createMemberId,creatememberName,createTime,description,note)
 		VALUES
-		(#{id}, #{memberId}, #{memberName}, #{weight},
-		#{weightTime},#{statusCode},#{statusName},#{createMemberId},#{creatememberName},#{createTime}#{description},#{note})
+		(#{id}, #{memberId}, #{memberName}, #{weight},#{weightTime},
+		#{statusCode},#{statusName},#{createMemberId},#{creatememberName},#{createTime},#{description},#{note})
 	</insert>
 	
 	</mapper>

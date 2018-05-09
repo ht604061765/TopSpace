@@ -90,7 +90,7 @@
     <div class="form-group" >
         <label for="lastname" class="col-sm-2 control-label">体重</label>
         <div class="col-sm-10"style="width:300px">
-            <input type="text" class="form-control" id="weight" 
+            <input type="text" class="form-control" id="weight" name="weight"
                    placeholder="请输入实时体重">
         </div>
     </div>
